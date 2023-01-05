@@ -13,21 +13,13 @@ import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 // import {Link} from 'react-router-dom'
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 const theme = createTheme();
 
 export default function SignInPage() {
   const [email,setEmail]=useState('')
   const [password,setPassword]=useState('')
-  
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   const data = new FormData(event.currentTarget);
-  //   console.log({
-  //     email: data.get('email'),
-  //     password: data.get('password'),
-  //   });
-  // };
-
+  const navigate=useNavigate()
   async function loginUser(event) {
     event.preventDefault()
 
@@ -43,8 +35,10 @@ export default function SignInPage() {
     })
 
     const data = await response.json()
-     if (data.user) {
+    console.log(data)
+     if (data.Token!=="") {
       alert('Login Successful')
+      localStorage.setItem('Token',data.Token)
       window.location.href = '/card'
      }
      else{
