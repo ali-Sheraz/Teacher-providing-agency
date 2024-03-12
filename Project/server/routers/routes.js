@@ -33,7 +33,7 @@ Router.post("/api/updatefeedback",userController.updatefeedback);
 Router.post("/api/updateTeacher",userController.updateteacher);
 Router.post("/api/MakeRequest",userController.MakeRequest);
 Router.put("/api/UpdateRequest",userController.UpdateRequest);
-Router.delete("/api/deleterequest",userController.deleteRequest)
+Router.delete("/api/ ",userController.deleteRequest)
 
 
 
