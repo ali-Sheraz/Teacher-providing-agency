@@ -1,0 +1,73 @@
+:root{
+    --clr-accent-400:hsl(142,90%,61%);
+    --padding:1.2rem;
+}
+.card{
+        width:300px;
+        height: auto;
+        margin:5px ;
+    /* background-image: url("https://images.pexels.com/photos/584399/living-room-couch-interior-room-584399.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"); */
+padding: 10rem 0 0;
+background-repeat:no-repeat;
+max-width:35ch;
+overflow: hidden;
+border-radius: 0.5rem;
+color: white;
+background-size:cover;
+transition:transform 500ms ease;
+}
+
+.card-content{
+    padding:var(var(--padding));
+    font-family: sans-serif;
+    padding: 1.5rem;
+    background:linear-gradient(
+    hsl(0 0% 0%/0)
+    hsl(20 0% 0%/0.3) 20%,
+    hsl(0 0% 0%/1)
+    );
+    transform: translateY(95%);
+    transition: transform 500ms ease;
+    color: beige;
+}
+.card:hover .card-content{
+    transform: translateY(0);
+}
+.card-title{
+    position: relative;
+width: min-content;
+color: white;
+margin-top:20px;
+padding: 5px;
+}
+.card-title::after{
+    content:'';
+    position:absolute;
+    left:calc(var(--padding)*-1);
+    bottom:0;
+    height:4px;
+    width:120%;
+    margin-top:-10px;
+    background: var(--clr-accent-400);
+    transform: scaleX(0);
+    transition:transform 500ms ease;
+    transform-origin: left;
+}
+.card:hover{
+    transform: scale(1.05);
+}
+.card:hover .card-title::after{
+    transform: scaleX(1);
+}
+.card-Price{
+    color: white;
+    font-weight: bold;
+    background-color: orange;
+    width:fit-content;
+    transform: scaleX(0);
+    transition:transform 500ms ease;
+    transform-origin: left;
+}
+.card:hover .card-Price{
+    transform: scaleX(1);
+}
